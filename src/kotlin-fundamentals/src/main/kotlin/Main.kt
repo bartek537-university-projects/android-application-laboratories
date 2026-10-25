@@ -50,6 +50,26 @@ interface BookRepository {
     fun findAllByQuery(query: String): List<Book>
 }
 
+interface ReaderRepository {
+    fun insert(reader: Reader)
+    fun getAll(): List<Reader>
+    fun getById(readerId: ReaderId): Reader?
+
+    fun existsById(id: ReaderId): Boolean
+}
+
+interface RentalRepository {
+    fun insert(rental: Rental)
+    fun update(rental: Rental)
+    fun getAll(): List<Rental>
+
+    fun findAllForBookId(bookId: BookId): List<Rental>
+    fun findActiveForBookId(bookId: BookId): Rental?
+    fun findAllForReaderId(readerId: ReaderId): List<Rental>
+    fun findActiveForReaderId(readerId: ReaderId): List<Rental>
+    fun countActiveForReaderId(readerId: ReaderId): Int
+}
+
 class InMemoryBookRepository(private val locale: Locale = Locale.ROOT) : BookRepository {
     private val books = mutableMapOf<BookId, Book>()
 
@@ -81,14 +101,6 @@ class InMemoryBookRepository(private val locale: Locale = Locale.ROOT) : BookRep
     }
 }
 
-interface ReaderRepository {
-    fun insert(reader: Reader)
-    fun getAll(): List<Reader>
-    fun getById(readerId: ReaderId): Reader?
-
-    fun existsById(id: ReaderId): Boolean
-}
-
 class InMemoryReaderRepository : ReaderRepository {
     private val readers = mutableMapOf<ReaderId, Reader>()
 
@@ -110,18 +122,6 @@ class InMemoryReaderRepository : ReaderRepository {
     override fun existsById(id: ReaderId): Boolean {
         return id in readers
     }
-}
-
-interface RentalRepository {
-    fun insert(rental: Rental)
-    fun update(rental: Rental)
-    fun getAll(): List<Rental>
-
-    fun findAllForBookId(bookId: BookId): List<Rental>
-    fun findActiveForBookId(bookId: BookId): Rental?
-    fun findAllForReaderId(readerId: ReaderId): List<Rental>
-    fun findActiveForReaderId(readerId: ReaderId): List<Rental>
-    fun countActiveForReaderId(readerId: ReaderId): Int
 }
 
 class InMemoryRentalRepository : RentalRepository {
@@ -168,6 +168,11 @@ class InMemoryRentalRepository : RentalRepository {
 
 sealed interface LibraryError
 
+sealed interface Result<out S, out E : LibraryError> {
+    data class Success<out S>(val value: S) : Result<S, Nothing>
+    data class Failure<out E : LibraryError>(val failure: E) : Result<Nothing, E>
+}
+
 sealed interface BookError : LibraryError {
     val book: Book
 }
@@ -176,16 +181,11 @@ sealed interface ReaderError : LibraryError {
     val reader: Reader
 }
 
-class BookNotRegisteredError(override val book: Book) : BookError
-class BookNotRentedError(override val book: Book) : BookError
-class BookAlreadyRentedError(override val book: Book) : BookError
-class ReaderNotRegisteredError(override val reader: Reader) : ReaderError
-class TooManyActiveRentalsForReaderError(override val reader: Reader) : ReaderError
-
-sealed interface Result<out S, out F : LibraryError> {
-    data class Success<out S>(val value: S) : Result<S, Nothing>
-    data class Failure<out F : LibraryError>(val failure: F) : Result<Nothing, F>
-}
+data class BookNotRegisteredError(override val book: Book) : BookError
+data class BookNotRentedError(override val book: Book) : BookError
+data class BookAlreadyRentedError(override val book: Book) : BookError
+data class ReaderNotRegisteredError(override val reader: Reader) : ReaderError
+data class TooManyActiveRentalsForReaderError(override val reader: Reader) : ReaderError
 
 class Library(
     private val bookRepository: BookRepository,
@@ -285,50 +285,56 @@ fun main() {
         clock = Clock.System,
     )
 
+    // Zarządzanie księgozbiorem.
+    // a.
     val a = Book(title = "Animal Farm", author = "George Orwell")
     val b = a.copy(id = BookId(value = Uuid.random())) // Kolejny egzemplarz tej samej książki.
-    val c = Book(title = "1984", author = "George Orwell")
-    val d = Book(title = "Fables for Robots", author = "Stanisław Lem")
+    val c = Book(title = "Fables for Robots", author = "Stanisław Lem")
+    val d = Book(title = "1984", author = "George Orwell")
 
+    println("\nRegistering books...")
     library.registerBook(a)
     library.registerBook(b)
     library.registerBook(c)
     // Ostatnia książka nie została na razie celowo zarejestrowana.
 
+    println("Registered ${library.books.size} books.")
     println(library.books)
-    // [Book(id=BookId(value=f447750a-0a56-4828-89fe-125015f023f7), title=Animal Farm, author=George Orwell),
-    //  Book(id=BookId(value=bb7482f2-d50a-4df1-912b-5ec809fe1d26), title=Animal Farm, author=George Orwell),
-    //  Book(id=BookId(value=815bb7d0-fee2-4cd5-bfb4-8b6cd1fb5618), title=1984, author=George Orwell)]
 
+    // b.
     val p = Reader(firstName = "Toby", lastName = "Jones")
     val q = Reader(firstName = "Martha", lastName = "Smith")
     val r = Reader(firstName = "Jacob", lastName = "Smith")
     val s = Reader(firstName = "Hans", lastName = "Jackson")
 
+    println("\nRegistering readers...")
     library.registerReader(p)
     library.registerReader(q)
     library.registerReader(r)
     // Ostatni czytelnik nie został na razie celowo zarejestrowany.
 
+    println("Registered ${library.readers.size} readers.")
     println(library.readers)
-    // [Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //  Reader(id=ReaderId(value=f13988ad-e230-4570-8efc-f48a4c3433f9), firstName=Martha, lastName=Smith),
-    //  Reader(id=ReaderId(value=6482ee3f-0b40-404e-be64-8e73a8f1ea72), firstName=Jacob, lastName=Smith)]
 
-    println(library.searchBooks("Farm"))
-    // [Book(id=BookId(value=f447750a-0a56-4828-89fe-125015f023f7), title=Animal Farm, author=George Orwell),
-    //  Book(id=BookId(value=bb7482f2-d50a-4df1-912b-5ec809fe1d26), title=Animal Farm, author=George Orwell)]
-    println(library.searchBooks("1984"))
-    // [Book(id=BookId(value=815bb7d0-fee2-4cd5-bfb4-8b6cd1fb5618), title=1984, author=George Orwell)]
+    // c.
+    println("\nSearching books for phrase 'ani'...")
+    println(library.searchBooks("ani"))
+    println("\nSearching books for phrase 'anis'...")
+    println(library.searchBooks("anis"))
 
     // Wypożyczanie książek.
     // a.
+    println("\nRenting book a for user p...")
     println(library.rentBook(a, p)) // Success
+    println("\nRenting book d for user p...")
     println(library.rentBook(d, p)) // Failure BookNotRegisteredError; Książka D nie została zarejestrowana.
+    println("\nRenting book b for user s...")
     println(library.rentBook(b, s)) // Failure ReaderNotRegisteredError; Czytelnik S nie został zarejestrowany.
     // b.
+    println("\nRenting book a for user q...")
     println(library.rentBook(a, q)) // Failure BookAlreadyRentedError; Książka jest już wypożyczona.
     // c.
+    println("\nRenting three books for user q...")
     library.registerBook(d) // Rejestrujemy czwartą książkę.
     println(library.rentBook(b, p)) // Success
     println(library.rentBook(c, p)) // Success
@@ -336,71 +342,31 @@ fun main() {
 
     // Zwracanie książek.
     // a.
+    println("\nReturning book a...")
     println(library.returnBook(a)) // Success
     // b.
-    println(library.returnBook(a)) // Failure BookNotRentedError
+    println("\nReturning book a...")
+    println(library.returnBook(a)) // Failure BookNotRentedError; Książka nie jest wypożyczona.
 
     // Historia.
-    println(library.rentBook(d, p)) // Success
     // a.
+    println("\nGetting active rentals for book a...")
     println(library.getActiveRental(a))
-    // null
-    println(library.getActiveRental(d))
-    // Rental(id=RentalId(value=208f6d7f-0d3d-4e96-b41c-5c5abfee16f4),
-    //        book=Book(id=BookId(value=3fa4584e-d7e7-4724-8629-690d5adfeae7), title=Fables for Robots, author=Stanisław Lem),
-    //        reader=Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //        rentedAt=2026-10-24T16:57:34.342310Z, returnedAt=null)
+    println("\nGetting active rentals for book b...")
+    println(library.getActiveRental(b))
+
+    println("\nGetting active rentals for reader p...")
     println(library.getActiveRentals(p))
-    // [Rental(id=RentalId(value=4aed820d-6605-4997-9896-118595a46cfa),
-    //         book=Book(id=BookId(value=bb7482f2-d50a-4df1-912b-5ec809fe1d26), title=Animal Farm, author=George Orwell),
-    //         reader=Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //         rentedAt=2026-10-24T16:57:34.341826Z, returnedAt=null),
-    //  Rental(id=RentalId(value=51fd7f6c-947a-4df6-8bc6-445f16626dbb),
-    //         book=Book(id=BookId(value=815bb7d0-fee2-4cd5-bfb4-8b6cd1fb5618), title=1984, author=George Orwell),
-    //         reader=Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //         rentedAt=2026-10-24T16:57:34.341900Z, returnedAt=null),
-    //  Rental(id=RentalId(value=208f6d7f-0d3d-4e96-b41c-5c5abfee16f4),
-    //         book=Book(id=BookId(value=3fa4584e-d7e7-4724-8629-690d5adfeae7), title=Fables for Robots, author=Stanisław Lem),
-    //         reader=Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //         rentedAt=2026-10-24T16:57:34.342310Z, returnedAt=null)]
+    println("\nGetting active rentals for reader q...")
+    println(library.getActiveRentals(q))
+
     // b.
+    println("\nGetting whole rental history...")
     println(library.rentals)
-    // [Rental(id=RentalId(value=aeb0cd56-c324-4a3d-80d7-56c454c98c8b),
-    //         book=Book(id=BookId(value=f447750a-0a56-4828-89fe-125015f023f7), title=Animal Farm, author=George Orwell),
-    //         reader=Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //         rentedAt=2026-10-24T16:57:34.337392Z, returnedAt=2026-10-24T16:57:34.342115Z),
-    //  Rental(id=RentalId(value=4aed820d-6605-4997-9896-118595a46cfa),
-    //         book=Book(id=BookId(value=bb7482f2-d50a-4df1-912b-5ec809fe1d26), title=Animal Farm, author=George Orwell),
-    //         reader=Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //         rentedAt=2026-10-24T16:57:34.341826Z, returnedAt=null),
-    //  Rental(id=RentalId(value=51fd7f6c-947a-4df6-8bc6-445f16626dbb),
-    //         book=Book(id=BookId(value=815bb7d0-fee2-4cd5-bfb4-8b6cd1fb5618), title=1984, author=George Orwell),
-    //         reader=Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //         rentedAt=2026-10-24T16:57:34.341900Z, returnedAt=null),
-    //  Rental(id=RentalId(value=208f6d7f-0d3d-4e96-b41c-5c5abfee16f4),
-    //         book=Book(id=BookId(value=3fa4584e-d7e7-4724-8629-690d5adfeae7), title=Fables for Robots, author=Stanisław Lem),
-    //         reader=Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //         rentedAt=2026-10-24T16:57:34.342310Z, returnedAt=null)]
+
+    println("\nGetting rental history for book a...")
     println(library.getRentalHistory(a))
-    // [Rental(id=RentalId(value=aeb0cd56-c324-4a3d-80d7-56c454c98c8b),
-    //         book=Book(id=BookId(value=f447750a-0a56-4828-89fe-125015f023f7), title=Animal Farm, author=George Orwell),
-    //         reader=Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //         rentedAt=2026-10-24T16:57:34.337392Z, returnedAt=2026-10-24T16:57:34.342115Z)]
+
+    println("\nGetting rental history for reader p...")
     println(library.getRentalHistory(p))
-    // [Rental(id=RentalId(value=aeb0cd56-c324-4a3d-80d7-56c454c98c8b),
-    //         book=Book(id=BookId(value=f447750a-0a56-4828-89fe-125015f023f7), title=Animal Farm, author=George Orwell),
-    //         reader=Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //         rentedAt=2026-10-24T16:57:34.337392Z, returnedAt=2026-10-24T16:57:34.342115Z),
-    //  Rental(id=RentalId(value=4aed820d-6605-4997-9896-118595a46cfa),
-    //         book=Book(id=BookId(value=bb7482f2-d50a-4df1-912b-5ec809fe1d26), title=Animal Farm, author=George Orwell),
-    //         reader=Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //         rentedAt=2026-10-24T16:57:34.341826Z, returnedAt=null),
-    //  Rental(id=RentalId(value=51fd7f6c-947a-4df6-8bc6-445f16626dbb),
-    //         book=Book(id=BookId(value=815bb7d0-fee2-4cd5-bfb4-8b6cd1fb5618), title=1984, author=George Orwell),
-    //         reader=Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //         rentedAt=2026-10-24T16:57:34.341900Z, returnedAt=null),
-    //  Rental(id=RentalId(value=208f6d7f-0d3d-4e96-b41c-5c5abfee16f4),
-    //         book=Book(id=BookId(value=3fa4584e-d7e7-4724-8629-690d5adfeae7), title=Fables for Robots, author=Stanisław Lem),
-    //         reader=Reader(id=ReaderId(value=c6864a81-7c35-4edb-a53a-3ea0821fdcae), firstName=Toby, lastName=Jones),
-    //         rentedAt=2026-10-24T16:57:34.342310Z, returnedAt=null)]
 }
