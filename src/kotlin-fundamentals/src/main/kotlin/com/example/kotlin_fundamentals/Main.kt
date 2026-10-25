@@ -1,3 +1,5 @@
+package com.example.kotlin_fundamentals
+
 import java.util.*
 import kotlin.time.Clock
 import kotlin.time.Instant
@@ -327,18 +329,18 @@ fun main() {
     println("\nRenting book a for user p...")
     println(library.rentBook(a, p)) // Success
     println("\nRenting book d for user p...")
-    println(library.rentBook(d, p)) // Failure BookNotRegisteredError; Książka D nie została zarejestrowana.
+    println(library.rentBook(d, p)) // Failure com.example.kotlin_fundamentals.BookNotRegisteredError; Książka D nie została zarejestrowana.
     println("\nRenting book b for user s...")
-    println(library.rentBook(b, s)) // Failure ReaderNotRegisteredError; Czytelnik S nie został zarejestrowany.
+    println(library.rentBook(b, s)) // Failure com.example.kotlin_fundamentals.ReaderNotRegisteredError; Czytelnik S nie został zarejestrowany.
     // b.
     println("\nRenting book a for user q...")
-    println(library.rentBook(a, q)) // Failure BookAlreadyRentedError; Książka jest już wypożyczona.
+    println(library.rentBook(a, q)) // Failure com.example.kotlin_fundamentals.BookAlreadyRentedError; Książka jest już wypożyczona.
     // c.
     println("\nRenting three books for user q...")
     library.registerBook(d) // Rejestrujemy czwartą książkę.
     println(library.rentBook(b, p)) // Success
     println(library.rentBook(c, p)) // Success
-    println(library.rentBook(d, p)) // Failure TooManyActiveRentalsForReaderError; Użytkownik wypożyczył już 3 książki.
+    println(library.rentBook(d, p)) // Failure com.example.kotlin_fundamentals.TooManyActiveRentalsForReaderError; Użytkownik wypożyczył już 3 książki.
 
     // Zwracanie książek.
     // a.
@@ -346,7 +348,7 @@ fun main() {
     println(library.returnBook(a)) // Success
     // b.
     println("\nReturning book a...")
-    println(library.returnBook(a)) // Failure BookNotRentedError; Książka nie jest wypożyczona.
+    println(library.returnBook(a)) // Failure com.example.kotlin_fundamentals.BookNotRentedError; Książka nie jest wypożyczona.
 
     // Historia.
     // a.
