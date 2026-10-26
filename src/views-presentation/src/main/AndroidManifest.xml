@@ -8,6 +8,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Androidapplicationlaboratories">
 
+        <activity
+            android:name=".presentation.A_NaiveApproachActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Material3.DayNight.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
