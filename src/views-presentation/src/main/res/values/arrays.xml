@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="avatars">
+        <item>@drawable/avatar_a</item>
+        <item>@drawable/avatar_b</item>
+        <item>@drawable/avatar_c</item>
+        <item>@drawable/avatar_d</item>
+        <item>@drawable/avatar_e</item>
+        <item>@drawable/avatar_f</item>
+        <item>@drawable/avatar_g</item>
+        <item>@drawable/avatar_h</item>
+        <item>@drawable/avatar_i</item>
+        <item>@drawable/avatar_j</item>
+        <item>@drawable/avatar_k</item>
+        <item>@drawable/avatar_l</item>
+    </array>
+</resources>
