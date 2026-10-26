@@ -1,3 +1,31 @@
 <resources>
+
     <string name="app_name">Views Presentation</string>
+
+    <string-array name="first_names">
+        <item>Liam</item>
+        <item>Noah</item>
+        <item>Olivier</item>
+        <item>James</item>
+        <item>Elijah</item>
+        <item>Olivia</item>
+        <item>Emma</item>
+        <item>Charlotte</item>
+        <item>Amelia</item>
+        <item>Sophia</item>
+    </string-array>
+
+    <string-array name="last_names">
+        <item>Smith</item>
+        <item>Johnson</item>
+        <item>Williams</item>
+        <item>Brown</item>
+        <item>Jones</item>
+        <item>Garcia</item>
+        <item>Miller</item>
+        <item>Davis</item>
+        <item>Rodriguez</item>
+        <item>Martinez</item>
+    </string-array>
+
 </resources>
