@@ -4,6 +4,13 @@
     <selectionStates>
       <SelectionState runConfigName="Run (src.views-presentation)">
         <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2026-10-26T20:18:28.313509Z">
+          <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="LocalEmulator" identifier="path=/Users/bartek537/.android/avd/Medium_Phone.avd" />
+            </handle>
+          </Target>
+        </DropdownSelection>
         <DialogSelection />
       </SelectionState>
       <SelectionState runConfigName="src.myapplication">
@@ -12,10 +19,10 @@
       </SelectionState>
       <SelectionState runConfigName="src.views-presentation">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2026-10-26T20:05:10.115882Z">
+        <DropdownSelection timestamp="2026-10-26T20:38:37.139924Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="PhysicalDevice" identifier="serial=1cef924f" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=/Users/bartek537/.android/avd/Medium_Phone.avd" />
             </handle>
           </Target>
         </DropdownSelection>
