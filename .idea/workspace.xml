@@ -15,6 +15,26 @@
           <theme>@style/Theme.AndroidApplicationLaboratories</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_h_recycler_view_diff_util.xml">
+        <config>
+          <theme>@style/Theme.AndroidApplicationLaboratories</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/src/views-presentation/src/main/res/layout/item_c_list_adapter.xml">
+        <config>
+          <theme>@style/Theme.AndroidApplicationLaboratories</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/src/views-presentation/src/main/res/layout/item_d_list_holder.xml">
+        <config>
+          <theme>@style/Theme.AndroidApplicationLaboratories</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/src/views-presentation/src/main/res/layout/item_e_grid_holder.xml">
+        <config>
+          <theme>@style/Theme.AndroidApplicationLaboratories</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/src/views-presentation/src/main/res/layout/item_f_recycler_view.xml">
         <config>
           <theme>@style/Theme.AndroidApplicationLaboratories</theme>
@@ -25,34 +45,26 @@
           <theme>@style/Theme.AndroidApplicationLaboratories</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/src/views-presentation/src/main/res/layout/item_h_recycler_diff_util.xml">
+        <config>
+          <theme>@style/Theme.AndroidApplicationLaboratories</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create a simple example of recycler view">
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/G_RecyclerViewNotificationActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/drawable-nodpi/add.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/drawable-nodpi/remove.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/drawable-nodpi/shuffle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_g_recycler_view_notification.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/layout/item_g_recycler_notification.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create example of notifications in recycler view">
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/H_RecyclerViewDiffUtilActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_h_recycler_view_diff_util.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/layout/item_h_recycler_diff_util.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deviceManager.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/migrations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/data/MockProfileRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/data/MockProfileRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/domain/ProfileRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/domain/ProfileRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/E_GridViewAdapterHolderActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/E_GridViewAdapterHolderActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_f_simple_recycler_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_f_simple_recycler_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/values/themes.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +74,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[LocalEmulator::path=/Users/bartek537/.android/avd/Medium_Phone.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[PhysicalDevice::serial=1cef924f]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -78,30 +90,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="3LHhJEW3zj1876vTMOBxfIvxlxs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.src.views-presentation.executor": "Run",
-    "CidrDebugProfileConversion": "true",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.src.views-presentation.executor&quot;: &quot;Run&quot;,
+    &quot;CidrDebugProfileConversion&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="android.template.-1685185961">
+      <recent name="com.example.views_presentation.presentation" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="src.views-presentation" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="android-application-laboratories.src.views-presentation" />
@@ -180,9 +197,22 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create a simple example of recycler view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create a simple example of recycler view" />
+    <MESSAGE value="Create simple example of recycler view" />
+    <MESSAGE value="Create simple example of recycler view" />
+    <MESSAGE value="Create example of notifications in recycler view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create example of notifications in recycler view" />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">

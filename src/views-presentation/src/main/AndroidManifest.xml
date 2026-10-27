@@ -45,6 +45,10 @@
             android:name=".presentation.G_RecyclerViewNotificationActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".presentation.H_RecyclerViewDiffUtilActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
