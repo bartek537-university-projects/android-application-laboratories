@@ -3,7 +3,7 @@ package com.example.views_presentation
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.views_presentation.presentation.F_SimpleRecyclerViewActivity
+import com.example.views_presentation.presentation.I_DataBindingActivity
 import com.google.android.material.color.DynamicColors
 
 class MainActivity : AppCompatActivity() {
@@ -18,9 +18,10 @@ class MainActivity : AppCompatActivity() {
 //        startActivity<C_ListViewAdapterActivity>()
 //        startActivity<D_ListViewAdapterHolderActivity>()
 //        startActivity<E_GridViewAdapterHolderActivity>()
-        startActivity<F_SimpleRecyclerViewActivity>()
+//        startActivity<F_SimpleRecyclerViewActivity>()
 //        startActivity<G_RecyclerViewNotificationActivity>()
 //        startActivity<H_RecyclerViewDiffUtilActivity>()
+        startActivity<I_DataBindingActivity>()
     }
 
     private inline fun <reified A> startActivity() {

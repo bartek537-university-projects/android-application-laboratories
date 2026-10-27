@@ -2,6 +2,11 @@
 
     <string name="app_name">Views Presentation</string>
 
+    <string name="name_contains_letters">Name contains %d letters.</string>
+    <string name="star_threshold">Star threshold</string>
+    <string name="next">Next</string>
+
+
     <string-array name="first_names">
         <item>Liam</item>
         <item>Noah</item>

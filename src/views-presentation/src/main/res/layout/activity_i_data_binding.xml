@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="activity"
+            type="com.example.views_presentation.presentation.I_DataBindingActivity" />
+
+        <variable
+            name="profile"
+            type="com.example.views_presentation.domain.Profile" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        tools:context=".presentation.I_DataBindingActivity">
+
+        <ImageView
+            android:id="@+id/avatar_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="64dp"
+            android:height="64dp"
+            android:importantForAccessibility="no"
+            android:src="@{context.getDrawable(profile.avatar)}"
+            app:layout_constraintBottom_toTopOf="@id/name_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:src="@drawable/avatar_c" />
+
+        <ImageView
+            android:id="@+id/badge_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:visibility="@{profile.name.length() >= Integer.parseInt(thresholdEditText.text.toString()) ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="@+id/avatar_image"
+            app:layout_constraintTop_toTopOf="@+id/avatar_image"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:maxLines="1"
+            android:text="@{profile.name}"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/avatar_image"
+            app:layout_constraintStart_toStartOf="@+id/avatar_image"
+            app:layout_constraintTop_toBottomOf="@+id/avatar_image"
+            tools:text="Tom Smith" />
+
+        <TextView
+            android:id="@+id/length_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/name_contains_letters(profile.name.length())}"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+            app:layout_constraintEnd_toEndOf="@+id/avatar_image"
+            app:layout_constraintStart_toStartOf="@+id/avatar_image"
+            app:layout_constraintTop_toBottomOf="@+id/name_text"
+            tools:text="Name contains 5 letters." />
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:onClick="@{() -> activity.setRandomProfile()}"
+            android:text="@string/next"
+            app:layout_constraintBaseline_toBaselineOf="@+id/threshold_input_layout"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/threshold_input_layout"
+            style="?attr/textInputOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/star_threshold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/threshold_edit_text"
+                style="@style/ThemeOverlay.Material3.TextInputEditText.FilledBox.Dense"
+                android:layout_width="156dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="18" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
