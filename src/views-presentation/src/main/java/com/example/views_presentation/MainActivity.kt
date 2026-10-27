@@ -3,8 +3,7 @@ package com.example.views_presentation
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.views_presentation.presentation.C_ListViewAdapterActivity
-import com.example.views_presentation.presentation.D_ListViewAdapterHolderActivity
+import com.example.views_presentation.presentation.E_GridViewAdapterHolderActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,7 +13,8 @@ class MainActivity : AppCompatActivity() {
 //        startActivity<A_NaiveApproachActivity>()
 //        startActivity<B_SimpleListViewActivity>()
 //        startActivity<C_ListViewAdapterActivity>()
-        startActivity<D_ListViewAdapterHolderActivity>()
+//        startActivity<D_ListViewAdapterHolderActivity>()
+        startActivity<E_GridViewAdapterHolderActivity>()
     }
 
     private inline fun <reified A> startActivity() {

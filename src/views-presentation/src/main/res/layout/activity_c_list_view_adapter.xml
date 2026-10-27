@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:focusable="true"
-    tools:context=".presentation.B_SimpleListViewActivity"
+    tools:context=".presentation.C_ListViewAdapterActivity"
     tools:listitem="@layout/item_c_list_adapter">
 
 </ListView>

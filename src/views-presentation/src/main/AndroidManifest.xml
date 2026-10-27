@@ -33,6 +33,10 @@
             android:name=".presentation.D_ListViewAdapterHolderActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".presentation.E_GridViewAdapterHolderActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
