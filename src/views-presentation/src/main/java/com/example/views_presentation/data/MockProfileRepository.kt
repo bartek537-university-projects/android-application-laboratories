@@ -24,7 +24,7 @@ class MockProfileRepository(context: Context) : ProfileRepository {
         return Array(limit) { getRandom() }
     }
 
-    private fun getRandom(): Profile {
+    override fun getRandom(): Profile {
         val avatar = avatars.random()
         val name = "${firstNames.random()} ${lastNames.random()}"
 

@@ -4,6 +4,7 @@
     android:id="@+id/recycler_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:listitem="@layout/item_f_recycler_view"
     tools:context=".presentation.F_SimpleRecyclerViewActivity">
 
 </androidx.recyclerview.widget.RecyclerView>

@@ -18,7 +18,6 @@ class E_GridViewAdapterHolderActivity : ExampleActivity<ActivityEGridViewAdapter
         return ActivityEGridViewAdapterHolderBinding.inflate(layoutInflater)
     }
 
-
     override fun onCreate() {
         val profiles = repository.getRandom(limit = 1000)  // Tested on 1_000, 20_000 and 1_000_000.
 
