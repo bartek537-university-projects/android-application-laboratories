@@ -16,16 +16,16 @@ class A_NaiveApproachActivity : ExampleActivity<ActivityANaiveApproachBinding>()
         val profiles = repository.getRandom(limit = 1_000) // Tested on 1_000 and 20_000.
 
         for (profile in profiles) {
-            val item = ItemANaiveApproachBinding.inflate(layoutInflater)
+            val binding = ItemANaiveApproachBinding.inflate(layoutInflater)
 
-            item.apply {
+            with(binding) {
                 avatarImage.setImageResource(profile.avatar)
                 nameText.text = profile.name
 
                 root.setOnClickListener { display(profile.name) }
             }
 
-            binding.linearLayout.addView(item.root)
+            this@A_NaiveApproachActivity.binding.linearLayout.addView(binding.root)
         }
     }
 }

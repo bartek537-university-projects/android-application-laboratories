@@ -17,9 +17,11 @@ class B_SimpleListViewActivity : ExampleActivity<ActivityBSimpleListViewBinding>
 
         val adapter = ArrayAdapter(this, R.layout.item_b_text_view, profiles)
 
-        binding.listView.onItemClickListener = { parent, view, position, id ->
-            display(profiles[position].name)
+        with(binding) {
+            listView.onItemClickListener = { parent, view, position, id ->
+                display(profiles[position].name)
+            }
+            listView.adapter = adapter
         }
-        binding.listView.adapter = adapter
     }
 }

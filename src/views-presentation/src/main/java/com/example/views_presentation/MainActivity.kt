@@ -3,8 +3,7 @@ package com.example.views_presentation
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.views_presentation.presentation.A_NaiveApproachActivity
-import com.example.views_presentation.presentation.B_SimpleListViewActivity
+import com.example.views_presentation.presentation.C_ListViewAdapterActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,7 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 //        startActivity<A_NaiveApproachActivity>()
-        startActivity<B_SimpleListViewActivity>()
+//        startActivity<B_SimpleListViewActivity>()
+        startActivity<C_ListViewAdapterActivity>()
     }
 
     private inline fun <reified A> startActivity() {
