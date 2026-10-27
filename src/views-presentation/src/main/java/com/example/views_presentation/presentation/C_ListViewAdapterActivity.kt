@@ -21,7 +21,7 @@ class C_ListViewAdapterActivity : ExampleActivity<ActivityCListViewAdapterBindin
     override fun onCreate() {
         val profiles = repository.getRandom(limit = 1_000) // Tested on 1_000, 20_000 and 1_000_000.
 
-        val adapter = ProfileListAdapter(this, profiles)
+        val adapter = CProfileListAdapter(this, profiles)
 
         with(binding) {
             listView.onItemClickListener = { parent, view, position, id ->
@@ -32,8 +32,9 @@ class C_ListViewAdapterActivity : ExampleActivity<ActivityCListViewAdapterBindin
     }
 }
 
-class ProfileListAdapter(private val context: Context, private val profiles: Array<Profile>) :
-    ArrayAdapter<Profile>(context, resource, profiles) {
+private class CProfileListAdapter(
+    private val context: Context, private val profiles: Array<Profile>
+) : ArrayAdapter<Profile>(context, resource, profiles) {
 
     companion object {
         private val resource = R.layout.item_c_list_adapter
