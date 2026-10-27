@@ -56,15 +56,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create example of notifications in recycler view">
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/H_RecyclerViewDiffUtilActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_h_recycler_view_diff_util.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/layout/item_h_recycler_diff_util.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create example of diff util in recycler view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/F_SimpleRecyclerViewActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/F_SimpleRecyclerViewActivity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +207,8 @@
     <MESSAGE value="Create simple example of recycler view" />
     <MESSAGE value="Create simple example of recycler view" />
     <MESSAGE value="Create example of notifications in recycler view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create example of notifications in recycler view" />
+    <MESSAGE value="Create example of diff util in recycler view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create example of diff util in recycler view" />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
