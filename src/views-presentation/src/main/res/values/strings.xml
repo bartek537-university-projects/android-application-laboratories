@@ -5,6 +5,8 @@
     <string name="name_contains_letters">Name contains %d letters.</string>
     <string name="star_threshold">Star threshold</string>
     <string name="next">Next</string>
+    <string name="tap">Tap</string>
+    <string name="taps">taps</string>
 
 
     <string-array name="first_names">

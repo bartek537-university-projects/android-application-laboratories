@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.k.CounterActivity">
+
+    <TextView
+        android:id="@+id/counter_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="\?"
+        android:textAppearance="@style/TextAppearance.Material3.DisplayLarge.Emphasized"
+        android:textSize="96sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/increment_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="HardcodedText"
+        tools:text="390" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/increment_button"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_margin="24dp"
+        android:fontFamily="casual"
+        android:text="@string/tap"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:icon="@drawable/web_traffic"
+        app:iconGravity="textEnd"
+        app:iconSize="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/hint_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-32dp"
+        android:fontFamily="casual"
+        android:text="@string/taps"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        app:layout_constraintEnd_toEndOf="@+id/counter_text"
+        app:layout_constraintStart_toStartOf="@+id/counter_text"
+        app:layout_constraintTop_toBottomOf="@+id/counter_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
