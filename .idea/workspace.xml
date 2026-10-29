@@ -71,16 +71,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create basic example of data binding">
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/k/CounterActivity.kt" afterDir="false" />
+    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create basic example of MVVM architecture">
       <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/k/CounterRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/k/CounterViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/drawable-nodpi/web_traffic.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_k_counter.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/k/CounterViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/k/CounterViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +139,8 @@
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
       <recent name="com.example.views_presentation.presentation.k" />
+      <recent name="com.example.views_presentation.presentation.l" />
+      <recent name="com.example.views_presentation.presentation" />
     </key>
   </component>
   <component name="RunManager">
@@ -243,7 +239,8 @@
     <MESSAGE value="Create example of diff util in recycler view" />
     <MESSAGE value="Adjust example of simple recycler view for grid layout" />
     <MESSAGE value="Create basic example of data binding" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create basic example of data binding" />
+    <MESSAGE value="Create basic example of MVVM architecture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create basic example of MVVM architecture" />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">

@@ -1,17 +1,23 @@
 package com.example.views_presentation.presentation.k
 
 import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.stateIn
 
-class CounterViewModel : ViewModel() {
+class CounterViewModel(
+    private val repository: CounterRepository = InMemoryCounterRepository()
+) : ViewModel() {
 
-    private val _count = MutableStateFlow(0)
-
-    val count: StateFlow<Int> = _count.asStateFlow()
+    val count: StateFlow<Int> = repository.getValueFlow() //
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5000),
+            initialValue = 0,
+        )
 
     fun increment() {
-        _count.value += 1
+        repository.increment()
     }
 }
