@@ -1,5 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
+include(":src:labs-timer")
+
+
 pluginManagement {
     repositories {
         google {
