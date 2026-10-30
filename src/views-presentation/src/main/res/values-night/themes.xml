@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Labs.StickyNote" parent="Base.Labs.StickyNote">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Labs.StickyNote.Light">
+        <item name="android:background">@android:color/system_accent1_500</item>
+    </style>
+
+    <style name="Labs.StickyNote.Dark">
+        <item name="android:background">@android:color/system_accent1_700</item>
+    </style>
+</resources>

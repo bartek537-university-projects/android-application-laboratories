@@ -5,6 +5,11 @@
       <config />
     </shared>
     <layouts>
+      <layout url="file://$PROJECT_DIR$/src/views-presentation/src/main/res/layout-pl/activity_m_styling.xml">
+        <config>
+          <theme>@style/Theme.AndroidApplicationLaboratories</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_f_simple_recycler_view.xml">
         <config>
           <theme>@style/Theme.AndroidApplicationLaboratories</theme>
@@ -31,6 +36,11 @@
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_l_signup.xml">
+        <config>
+          <theme>@style/Theme.AndroidApplicationLaboratories</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_m_styling.xml">
         <config>
           <theme>@style/Theme.AndroidApplicationLaboratories</theme>
         </config>
@@ -76,18 +86,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create repository to store counter value in basic example of MVVM">
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/l/SignupActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/l/SignupViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/drawable-nodpi/cake.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/drawable-nodpi/drafts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/drawable-nodpi/password.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/drawable-nodpi/user.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_l_signup.xml" afterDir="false" />
+    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create complex example of MVVM">
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/M_StylingActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/layout-pl/activity_m_styling.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_m_styling.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/values-night/themes.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/values/themes.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,9 +113,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
+        <option value="valueResourceFile" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -148,6 +156,9 @@
       <recent name="com.example.views_presentation.presentation" />
     </key>
     <key name="android.template.977752850">
+      <recent name="com.example.views_presentation.presentation" />
+    </key>
+    <key name="android.template.548748443">
       <recent name="com.example.views_presentation.presentation" />
     </key>
     <key name="android.template.1026981745">
@@ -259,7 +270,8 @@
     <MESSAGE value="Adjust example of simple recycler view for grid layout" />
     <MESSAGE value="Create basic example of data binding" />
     <MESSAGE value="Create basic example of MVVM architecture" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create basic example of MVVM architecture" />
+    <MESSAGE value="Create complex example of MVVM" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create complex example of MVVM" />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
