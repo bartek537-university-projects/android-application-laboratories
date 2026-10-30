@@ -7,7 +7,20 @@
     <string name="next">Next</string>
     <string name="tap">Tap</string>
     <string name="taps">taps</string>
-
+    <string name="repeat_password">Repeat password</string>
+    <string name="password">Password</string>
+    <string name="user_name">User name</string>
+    <string name="passwords_do_not_match">Passwords do not match.</string>
+    <string name="has_at_least_8_characters">Has at least 8 characters.</string>
+    <string name="has_at_least_1_digit">Has at least 1 digit.</string>
+    <string name="has_at_least_1_lower_case_letter">Has at least 1 lower case letter.</string>
+    <string name="has_at_least_1_upper_case_letter">Has at least 1 upper case letter.</string>
+    <string name="password_is_not_strong_enough">Password is not strong enough.</string>
+    <string name="username_must_consist_of_at_least_4_letters">Username must consist of at least 4 letters.</string>
+    <string name="checking_availability_for_username">Checking availability for \"%1$s\"…</string>
+    <string name="unable_to_check_username_availability_reason">Unable to check username availability. Reason: %1$s</string>
+    <string name="username_is_available">Username \"%1$s\" is available.</string>
+    <string name="username_is_taken">Username \"%1$s\" is already taken.</string>
 
     <string-array name="first_names">
         <item>Liam</item>

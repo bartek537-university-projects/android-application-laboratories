@@ -30,6 +30,11 @@
           <theme>@style/Theme.AndroidApplicationLaboratories</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_l_signup.xml">
+        <config>
+          <theme>@style/Theme.AndroidApplicationLaboratories</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/src/views-presentation/src/main/res/layout/item_a_naive_approach.xml">
         <config>
           <theme>@style/Theme.AndroidApplicationLaboratories</theme>
@@ -71,10 +76,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create basic example of MVVM architecture">
-      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/k/CounterRepository.kt" afterDir="false" />
+    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create repository to store counter value in basic example of MVVM">
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/l/SignupActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/l/SignupViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/drawable-nodpi/cake.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/drawable-nodpi/drafts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/drawable-nodpi/password.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/drawable-nodpi/user.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/layout/activity_l_signup.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/k/CounterViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/presentation/k/CounterViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/java/com/example/views_presentation/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views-presentation/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views-presentation/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,13 +107,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -124,7 +140,7 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.folding&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.kotlin&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -133,6 +149,9 @@
     </key>
     <key name="android.template.977752850">
       <recent name="com.example.views_presentation.presentation" />
+    </key>
+    <key name="android.template.1026981745">
+      <recent name="com.example.views_presentation.presentation.l" />
     </key>
     <key name="android.template.-1685185961">
       <recent name="com.example.views_presentation.presentation" />
@@ -247,12 +266,12 @@
       <map>
         <entry key="com.example.views_presentation">
           <value>
-            <CheckInfo lastCheckTimestamp="1793229409061" />
+            <CheckInfo lastCheckTimestamp="1793315811860" />
           </value>
         </entry>
         <entry key="com.example.views_presentation.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1793229409061" />
+            <CheckInfo lastCheckTimestamp="1793315811863" />
           </value>
         </entry>
       </map>

@@ -3,7 +3,7 @@ package com.example.views_presentation
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.views_presentation.presentation.k.CounterActivity
+import com.example.views_presentation.presentation.l.SignupActivity
 import com.google.android.material.color.DynamicColors
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +22,8 @@ class MainActivity : AppCompatActivity() {
 //        startActivity<G_RecyclerViewNotificationActivity>()
 //        startActivity<H_RecyclerViewDiffUtilActivity>()
 //        startActivity<I_DataBindingActivity>()
-        startActivity<CounterActivity>()
+//        startActivity<CounterActivity>()
+        startActivity<SignupActivity>()
     }
 
     private inline fun <reified A> startActivity() {
