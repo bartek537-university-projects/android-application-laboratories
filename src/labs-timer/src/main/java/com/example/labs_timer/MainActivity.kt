@@ -1,28 +1,22 @@
 package com.example.labs_timer
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.labs_timer.databinding.ActivityMainBinding
+import com.example.labs_timer.compose.TimerComposeActivity
+import com.example.labs_timer.views.TimerViewsActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        enableEdgeToEdge()
-        configureEdgeToEdge()
+        startActivity<TimerViewsActivity>()
+        startActivity<TimerComposeActivity>()
     }
 
-    private fun configureEdgeToEdge() {
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+    private inline fun <reified A : Activity> startActivity() {
+        val intent = Intent(this, A::class.java)
+        startActivity(intent)
     }
 }
