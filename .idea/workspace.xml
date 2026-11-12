@@ -2,7 +2,11 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <device id="_device_class_tablet" />
+        <device id="_device_class_foldable" />
+        <device id="_device_class_phone" />
+      </config>
     </shared>
     <layouts>
       <layout url="file://$PROJECT_DIR$/src/labs-timer/src/main/res/layout/activity_main.xml">
@@ -96,20 +100,27 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create project for labs-timer">
-      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/TimerComposeActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/ui/theme/Color.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/ui/theme/Theme.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/ui/theme/Type.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/views/TimerViewsActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/res/layout/activity_timer_views.xml" afterDir="false" />
+    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create empty activities for timer">
+      <change afterPath="$PROJECT_DIR$/.idea/deviceManager.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/CountdownViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/ui/components/ActionButton.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/ui/components/CountdownControls.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/ui/components/DigitField.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/ui/components/TimerDisplay.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/ui/screens/TimerScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/res/drawable-nodpi/ic_add.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/res/drawable-nodpi/ic_minus.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/res/drawable-nodpi/ic_pause.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/res/drawable-nodpi/ic_play.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/res/drawable-nodpi/ic_stop.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/labs-timer/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/TimerComposeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/TimerComposeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/ui/theme/Color.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/ui/theme/Color.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/compose/ui/theme/Theme.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/src/main/res/values/themes.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +142,8 @@
         <option value="Kotlin Interface" />
         <option value="valueResourceFile" />
         <option value="layoutResourceFile" />
+        <option value="Kotlin Enum" />
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -139,7 +152,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="_Designer_Tab" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -147,7 +160,6 @@
 }</component>
   <component name="ProjectId" id="3LHhJEW3zj1876vTMOBxfIvxlxs" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
@@ -160,6 +172,7 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
@@ -189,6 +202,7 @@
       <recent name="com.example.views_presentation.presentation" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.example.labs_timer.compose" />
       <recent name="com.example.labs_timer.views" />
       <recent name="com.example.views_presentation.presentation.k" />
       <recent name="com.example.views_presentation.presentation.l" />
@@ -364,7 +378,8 @@
     <MESSAGE value="Create basic example of MVVM architecture" />
     <MESSAGE value="Create complex example of MVVM" />
     <MESSAGE value="Create project for labs-timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create project for labs-timer" />
+    <MESSAGE value="Create empty activities for timer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create empty activities for timer" />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">

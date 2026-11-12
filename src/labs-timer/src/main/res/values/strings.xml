@@ -1,4 +1,25 @@
 <resources>
-    <string name="app_name">Labs Timer</string>
+    <string name="app_name">Timer</string>
+
     <string name="title_activity_timer_compose">TimerComposeActivity</string>
+
+    <string name="adjust_increment">Add %s.</string>
+    <string name="adjust_decrement">Subtract %s.</string>
+
+    <string name="action_start">Start</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_stop">Stop</string>
+
+    <string name="symbol_colon" translatable="false">:</string>
+
+    <plurals name="adjust_unit_second">
+        <item quantity="one">%d second</item>
+        <item quantity="other">%d seconds</item>
+    </plurals>
+
+    <plurals name="adjust_unit_minute">
+        <item quantity="one">%d minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+
 </resources>
