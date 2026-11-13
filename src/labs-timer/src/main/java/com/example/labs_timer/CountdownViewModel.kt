@@ -39,15 +39,25 @@ class Countdown(private val source: TimeSource.WithComparableMarks = TimeSource.
 
     val remaining: Duration
         get() {
-            // TODO: Fixme?
-            val total = duration + offset - accumulated - segment
-            return total.coerceIn(range = MIN..MAX)
+            val rawRemaining = duration + offset - accumulated - segment
+
+            if (rawRemaining <= MIN) {
+                if (isRunning) {
+                    pause()
+                }
+                return MIN
+            }
+
+            return rawRemaining.coerceAtMost(MAX)
         }
 
     operator fun plusAssign(amount: Duration) {
-        // TODO: Fixme. Changing offset when remaining is MIN or MAX results in a glitch.
         if (isActive) {
-            offset += amount
+            val currentRemaining = (duration + offset - accumulated - segment).coerceAtLeast(MIN)
+            val targetRemaining = (currentRemaining + amount).coerceIn(MIN, MAX)
+            val allowedAmount = targetRemaining - currentRemaining
+
+            offset += allowedAmount
         } else {
             duration += amount
         }
@@ -59,6 +69,10 @@ class Countdown(private val source: TimeSource.WithComparableMarks = TimeSource.
 
     fun start() {
         if (start != null) {
+            return
+        }
+
+        if (remaining <= MIN) {
             return
         }
 
@@ -207,7 +221,6 @@ class CountdownViewModel : ViewModel() {
                 updateCountdownState()
             }
             .launchIn(viewModelScope)
-
     }
 
     private fun stopTicker() {

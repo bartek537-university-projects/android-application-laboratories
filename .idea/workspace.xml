@@ -105,15 +105,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create countdown in compose">
-      <change afterPath="$PROJECT_DIR$/src/labs-timer/src/main/res/drawable/digit_background.xml" afterDir="false" />
+    <list default="true" id="871d8460-6c43-427b-bed3-e0ca8d4b6cda" name="Changes" comment="Create countdown in views (XML)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/views/TimerViewsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/views/TimerViewsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/res/layout/activity_timer_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/src/main/res/layout/activity_timer_views.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/CountdownViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/labs-timer/src/main/java/com/example/labs_timer/CountdownViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,7 +367,8 @@
     <MESSAGE value="Create project for labs-timer" />
     <MESSAGE value="Create empty activities for timer" />
     <MESSAGE value="Create countdown in compose" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create countdown in compose" />
+    <MESSAGE value="Create countdown in views (XML)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create countdown in views (XML)" />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
