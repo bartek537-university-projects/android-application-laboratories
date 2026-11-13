@@ -1,5 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
+include(":src:teacher-assistant")
+
+
 include(":src:labs-timer")
 
 
