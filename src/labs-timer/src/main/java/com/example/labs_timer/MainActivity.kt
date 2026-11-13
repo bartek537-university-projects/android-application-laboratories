@@ -11,8 +11,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        startActivity<TimerViewsActivity>()
-        startActivity<TimerComposeActivity>()
+        startActivity<TimerViewsActivity>()
+//        startActivity<TimerComposeActivity>()
     }
 
     private inline fun <reified A : Activity> startActivity() {

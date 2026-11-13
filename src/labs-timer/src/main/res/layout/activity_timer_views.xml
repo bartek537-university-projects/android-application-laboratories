@@ -1,10 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.TimerViewsActivity">
+    tools:context=".MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/increment_tens_of_minutes_button"
+            style="@style/Widget.Material3Expressive.Button.IconButton.Filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_add"
+            app:layout_constraintBottom_toTopOf="@+id/tens_of_minutes_input"
+            app:layout_constraintEnd_toEndOf="@+id/tens_of_minutes_input"
+            app:layout_constraintStart_toStartOf="@+id/tens_of_minutes_input" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/decrement_tens_of_minutes_button"
+            style="@style/Widget.Material3Expressive.Button.IconButton.Filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:icon="@drawable/ic_minus"
+            app:layout_constraintEnd_toEndOf="@+id/tens_of_minutes_input"
+            app:layout_constraintStart_toStartOf="@+id/tens_of_minutes_input"
+            app:layout_constraintTop_toBottomOf="@+id/tens_of_minutes_input" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tens_of_minutes_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/hour_separator"
+            app:layout_constraintEnd_toStartOf="@id/single_minutes_input"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/digit_background"
+                android:includeFontPadding="false"
+                android:maxLength="1"
+                android:padding="8dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceDisplaySmall"
+                android:textSize="64sp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/increment_single_minutes_button"
+            style="@style/Widget.Material3Expressive.Button.IconButton.Filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_add"
+            app:layout_constraintBottom_toTopOf="@+id/single_minutes_input"
+            app:layout_constraintEnd_toEndOf="@+id/single_minutes_input"
+            app:layout_constraintStart_toStartOf="@+id/single_minutes_input" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/decrement_single_minutes_button"
+            style="@style/Widget.Material3Expressive.Button.IconButton.Filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:icon="@drawable/ic_minus"
+            app:layout_constraintEnd_toEndOf="@+id/single_minutes_input"
+            app:layout_constraintStart_toStartOf="@+id/single_minutes_input"
+            app:layout_constraintTop_toBottomOf="@+id/single_minutes_input" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/single_minutes_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/hour_separator"
+            app:layout_constraintEnd_toStartOf="@id/hour_separator"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/tens_of_minutes_input">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/digit_background"
+                android:includeFontPadding="false"
+                android:maxLength="1"
+                android:padding="8dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceDisplaySmall"
+                android:textSize="64sp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/hour_separator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text=":"
+            android:textAppearance="?attr/textAppearanceDisplaySmall"
+            android:textSize="64sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/stop_button"
+            app:layout_constraintEnd_toStartOf="@+id/tens_of_seconds_input"
+            app:layout_constraintStart_toEndOf="@+id/single_minutes_input"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/increment_tens_of_seconds_button"
+            style="@style/Widget.Material3Expressive.Button.IconButton.Filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_add"
+            app:layout_constraintBottom_toTopOf="@+id/tens_of_seconds_input"
+            app:layout_constraintEnd_toEndOf="@+id/tens_of_seconds_input"
+            app:layout_constraintStart_toStartOf="@+id/tens_of_seconds_input" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/decrement_tens_of_seconds_button"
+            style="@style/Widget.Material3Expressive.Button.IconButton.Filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:icon="@drawable/ic_minus"
+            app:layout_constraintEnd_toEndOf="@+id/tens_of_seconds_input"
+            app:layout_constraintStart_toStartOf="@+id/tens_of_seconds_input"
+            app:layout_constraintTop_toBottomOf="@+id/tens_of_seconds_input" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tens_of_seconds_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/hour_separator"
+            app:layout_constraintEnd_toStartOf="@id/single_seconds_input"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/hour_separator">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/digit_background"
+                android:includeFontPadding="false"
+                android:maxLength="1"
+                android:padding="8dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceDisplaySmall"
+                android:textSize="64sp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/increment_single_seconds_button"
+            style="@style/Widget.Material3Expressive.Button.IconButton.Filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_add"
+            app:layout_constraintBottom_toTopOf="@+id/single_seconds_input"
+            app:layout_constraintEnd_toEndOf="@+id/single_seconds_input"
+            app:layout_constraintStart_toStartOf="@+id/single_seconds_input" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/decrement_single_seconds_button"
+            style="@style/Widget.Material3Expressive.Button.IconButton.Filled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:icon="@drawable/ic_minus"
+            app:layout_constraintEnd_toEndOf="@+id/single_seconds_input"
+            app:layout_constraintStart_toStartOf="@+id/single_seconds_input"
+            app:layout_constraintTop_toBottomOf="@+id/single_seconds_input" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/single_seconds_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/hour_separator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/tens_of_seconds_input">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/digit_background"
+                android:includeFontPadding="false"
+                android:maxLength="1"
+                android:padding="8dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textAppearance="?attr/textAppearanceDisplaySmall"
+                android:textSize="64sp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/start_button"
+            style="@style/Widget.Material3Expressive.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
+            android:text="@string/action_start"
+            app:icon="@drawable/ic_play"
+            app:iconGravity="textTop"
+            app:iconSize="32dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/pause_button"
+            app:layout_constraintEnd_toStartOf="@+id/pause_button"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/pause_button"
+            style="@style/Widget.Material3Expressive.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:backgroundTint="@color/blue"
+            android:text="@string/action_pause"
+            app:icon="@drawable/ic_pause"
+            app:iconGravity="textTop"
+            app:iconSize="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/stop_button"
+            app:layout_constraintStart_toEndOf="@id/start_button" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/stop_button"
+            style="@style/Widget.Material3Expressive.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:backgroundTint="@color/red"
+            android:text="@string/action_stop"
+            app:icon="@drawable/ic_stop"
+            app:iconGravity="textTop"
+            app:iconSize="32dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/pause_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/pause_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
